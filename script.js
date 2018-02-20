@@ -24,3 +24,12 @@ function startGame() {
 		cells[i].addEventListener('click', turnClick, false)
 	}
 }
+
+function turnClick(square) {
+	turn(square.target.id, humanPlayer)
+}
+
+function turn(squareId, player) {
+	originalBoard[squareId] = player
+	document.getElementById(squareId).innerText = player
+}
